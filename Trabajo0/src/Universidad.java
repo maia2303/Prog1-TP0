@@ -40,4 +40,10 @@ public class Universidad {
             this.direccion = direccion;
         }
     }
+
+    public List<Estudiante> getEstudiantes() {
+        return estudiantes;
+    }
+
+    
 }
