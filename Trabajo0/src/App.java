@@ -3,9 +3,9 @@ public class App {
        
         Estudiante e1 = new Estudiante(); //constructor sin parámetros
         
-        Estudiante e2 = new Estudiante("Lucas", "Chavez", 26, "Ingeniería en Sistemas", 8.0f);
+        Estudiante e2 = new Estudiante("Lucas", "Chavez", 26, "Ingeniería en Sistemas", 8.0);
         //constructor con parámetros
-        Estudiante e3 = new Estudiante("Lucía", "Suarez", 21, "Electrónica", 9.8f);
+        Estudiante e3 = new Estudiante("Lucía", "Suarez", 21, "Electrónica", 9.8);
 
         Estudiante[] estudiantes = { e1, e2, e3 }; //array para almacenar y recorrer
 
