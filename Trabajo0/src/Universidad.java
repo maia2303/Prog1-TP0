@@ -1,22 +1,15 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Universidad {
     private String nombre;
     private String direccion;
-    private List<Estudiante> estudiantes; //lista de estudiantes (no 1)
-    
-    public Universidad () {//constructor sin parametros
-        nombre = " ";
-        direccion = " ";
-        estudiantes = new ArrayList<>();
+    private Estudiante estudiantes[]; //declarar un array estudiante
+    private int cantEstudiantes;
+   
 
-    }
-
-    public Universidad (String nombre, String direccion) { //con parametros
+    public Universidad (String nombre, String direccion, int cantEstudiantes) { //con parametros
         this.setNombre(nombre);
         this.setDireccion(direccion);
-        this.estudiantes = new ArrayList<>();
+        this.cantEstudiantes = cantEstudiantes;
+        this.estudiantes = new Estudiante[cantEstudiantes]; //crear el array con capacidad
     }
 
     public String getNombre() {
@@ -39,10 +32,6 @@ public class Universidad {
         } else {
             this.direccion = direccion;
         }
-    }
-
-    public List<Estudiante> getEstudiantes() {
-        return estudiantes;
     }
 
     

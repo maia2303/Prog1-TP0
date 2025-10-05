@@ -10,7 +10,7 @@ public class App {
         Estudiante[] estudiantes = { e1, e2, e3 }; //array para almacenar y recorrer
 
         for (int i = 0; i < 3; i++) {
-        System.out.println("Nombre: " + estudiantes[i].nombre + ", Promedio: " + estudiantes[i].promedio);
+        System.out.println("Nombre: " + estudiantes[i].getNombre() + ", Promedio: " + estudiantes[i].getPromedio() );
         }
     }
 }

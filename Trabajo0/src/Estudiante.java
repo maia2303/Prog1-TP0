@@ -4,23 +4,22 @@ public class Estudiante {
    private int edad; 
    private String carrera;
    private double promedio;
+   //relación de estudiante con materia
+   private Materia[] materias; //array materias
+   private int cantMaterias;
+   
 
-   public Estudiante () { //constructor sin parámetros
-        nombre = " ";
-        apellido = " ";
-        edad = 0;
-        carrera = " ";
-        promedio = 0.0;
-    }
 
-    public Estudiante (String nombre, String apellido, int edad, String carrera, double promedio) { //constructor con parámetros
+    public Estudiante (String nombre, String apellido, int edad, String carrera, double promedio, int cantMaterias) { //constructor con parámetros
         this.setNombre(nombre); //inicializa todos los parámetros usando this
         this.setApellido(apellido);
         this.setEdad(edad);
         this.setCarrera(carrera);
         this.setPromedio(promedio);
-
+        this.cantMaterias = cantMaterias;
+        this.materias = new Materia [cantMaterias]; 
     }  
+
     public String getNombre() {
         return nombre;
     }
@@ -73,8 +72,33 @@ public class Estudiante {
         }
         
     }
-
     
+    public void agregarMateria(Materia materia){
+        if (this.cantMaterias < this.materias.length) {
+            this.materias[this.cantMaterias] = materia;
+            this.cantMaterias++;
+            System.out.println("Materia agregada✅" + materia.getNombreM());
+        } else {
+            System.out.println("No se pueden agregar más materias❌");
+        }
+      
+    }
+
+    public double calcularPromedio(){
+        double sumaCalif = 0.0;
+        if(this.cantMaterias == 0){
+            System.out.println("No hay materias registradas para calcular el promedio ❌");
+            return 0.0;
+        } else {
+            for (int i = 0; i < this.cantMaterias; i++) {
+                sumaCalif += this.materias[i].getCalificacion();
+            }
+        }
+        double newPromedio = sumaCalif / this.cantMaterias;
+        this.setPromedio(newPromedio);
+        System.out.println("El promedio de calificaciones es: " + newPromedio);
+        return newPromedio;
+    }
 }
 
 
