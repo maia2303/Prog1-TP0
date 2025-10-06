@@ -1,3 +1,4 @@
+
 public class Carrera {
     private String nombreCarrera;
     private Estudiante estudiantes[]; //array estudiantes
@@ -32,7 +33,7 @@ public class Carrera {
             System.out.println("La carrera" + this.nombreCarrera + "ha alcanzado el máximo de inscriptos ⚠️");
         }
     }
-
+    
     public void listarEstudiantes() { 
         if (cantEstudiantes == 0) {
             System.out.println("No hay estudiantes inscriptos en" + this.nombreCarrera + ".");
@@ -46,22 +47,22 @@ public class Carrera {
         }
     }
 
-    public void buscarEstudiante() {
-        if (getNombre == null || getNombre.trim().isEmpty()) {
+    public Estudiante buscarEstudiante(String nombreBuscar) {
+        if (nombreBuscar == null || nombreBuscar.trim().isEmpty()) {
             System.out.println("Debe escribir un nombre para buscar.");
             return null;            
         } else {
-            System.out.println("Buscando estudiante" + getNombre + "en " + getNombreCarrera() + "...");
+            System.out.println("Buscando estudiante" + nombreBuscar + "en " + getNombreCarrera() + "...");
         }
         for(int i = 0; i < this.cantEstudiantes; i++){
             Estudiante e = estudiantes[i];
-            if (e.getNombre().equalsIgnoreCase(getNombre.trim())) {
+            if (e.getNombre().equalsIgnoreCase(nombreBuscar.trim())) { //equal busca a pesar de las minúsculas y mayúsculas
                 System.out.println("✅ Estudiante encontrado" + e.getNombre() + " " + e.getApellido());
                 return e;
-            }
-            System.out.println("❌ Estudiante" + getNombre() + "no encontrado en" + this.getNombreCarrera());
-            return null;
+            } 
         }
+        System.out.println("❌ Estudiante" + nombreBuscar + "no encontrado en" + this.getNombreCarrera());
+        return null;
     }
 
 }

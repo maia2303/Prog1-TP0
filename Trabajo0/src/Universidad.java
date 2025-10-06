@@ -8,8 +8,8 @@ public class Universidad {
     public Universidad (String nombre, String direccion, int cantEstudiantes) { //con parametros
         this.setNombre(nombre);
         this.setDireccion(direccion);
+        this.cantEstudiantes = cantEstudiantes;
         this.estudiantes = new Estudiante[cantEstudiantes]; //crear el array con capacidad
-        this.cantEstudiantes = 0;     
     }
 
     public String getNombre() {
