@@ -8,15 +8,13 @@ public class Estudiante {
    private Materia[] materias; //array materias
    private int cantMaterias;
    
-
-
     public Estudiante (String nombre, String apellido, int edad, String carrera, double promedio, int cantMaterias) { //constructor con parámetros
         this.setNombre(nombre); //inicializa todos los parámetros usando this
         this.setApellido(apellido);
         this.setEdad(edad);
         this.setCarrera(carrera);
         this.setPromedio(promedio);
-        this.cantMaterias = cantMaterias;
+        this.cantMaterias = 0;
         this.materias = new Materia [cantMaterias]; 
     }  
 
