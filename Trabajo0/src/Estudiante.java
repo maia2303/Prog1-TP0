@@ -16,8 +16,8 @@ public class Estudiante {
         this.setEdad(edad);
         this.setCarrera(carrera);
         this.setPromedio(promedio);
-        this.cantMaterias = cantMaterias;
-        this.materias = new Materia [cantMaterias]; 
+        this.cantMaterias = 0;
+        this.materias = new Materia [5]; 
     }  
 
     public String getNombre() {
@@ -68,7 +68,7 @@ public class Estudiante {
         if (promedio >= 0 && promedio <= 10) {
           this.promedio = promedio;  
         } else {
-            System.out.println("El promedio debe estar entre 0 y 10");
+            System.out.println("El promedio debe estar entre 0 y 10.");
         }
         
     }
@@ -77,9 +77,9 @@ public class Estudiante {
         if (this.cantMaterias < this.materias.length) {
             this.materias[this.cantMaterias] = materia;
             this.cantMaterias++;
-            System.out.println("Materia agregada✅" + materia.getNombreM());
+            System.out.println("Materia agregada " + materia.getNombreM());
         } else {
-            System.out.println("No se pueden agregar más materias❌");
+            System.out.println("No se pueden agregar más materias");
         }
       
     }
@@ -87,7 +87,7 @@ public class Estudiante {
     public double calcularPromedio(){
         double sumaCalif = 0.0;
         if(this.cantMaterias == 0){
-            System.out.println("No hay materias registradas para calcular el promedio ❌");
+            System.out.println("No hay materias registradas para calcular el promedio");
             return 0.0;
         } else {
             for (int i = 0; i < this.cantMaterias; i++) {
@@ -96,7 +96,6 @@ public class Estudiante {
         }
         double newPromedio = sumaCalif / this.cantMaterias;
         this.setPromedio(newPromedio);
-        System.out.println("El promedio de calificaciones es: " + newPromedio);
         return newPromedio;
     }
 }
